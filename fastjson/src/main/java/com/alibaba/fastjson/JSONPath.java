@@ -1684,15 +1684,12 @@ public class JSONPath implements JSONAware {
             }
             
             int end;
-            if (acceptBracket) {
-                end = pos - 1;
+            if (acceptBracket || ch == '/' || ch == '.') {
+            end = pos - 1;
             } else {
-                if (ch == '/' || ch == '.') {
-                    end = pos - 1;
-                } else {
-                    end = pos;
-                }
+            end = pos;
             }
+
             
             String text = path.substring(start, end);
 
