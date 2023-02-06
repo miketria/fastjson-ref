@@ -1214,9 +1214,7 @@ public class JSONPath implements JSONAware {
                             isIntObj = false;
                         }
 
-                        if (isString && clazz != String.class) {
-                            isString = false;
-                        }
+                        isString = !(isString && clazz != String.class);
                     }
 
                     if (valueList.size() == 1 && valueList.get(0) == null) {
